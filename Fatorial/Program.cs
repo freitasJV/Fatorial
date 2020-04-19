@@ -9,19 +9,19 @@ namespace Fatorial
             Console.Write("Digite um número para calcular o seu fatorial: ");
             int x = int.Parse(Console.ReadLine());
 
-            int resultado = fatorial(x);
+            int resultado = Fatorial(x);
 
             Console.WriteLine(resultado);
         }
 
-        static int fatorial(int n)
+        static int Fatorial(int n)
         {
             if (n == 0)
                 return 0;
             if (n <= 1)
                 return n;
             else
-                return n * fatorial(n - 1);
+                return n * Fatorial(n - 1);
         }
     }
 }
