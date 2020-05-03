@@ -6,12 +6,23 @@ namespace Fatorial
     {
         static void Main(string[] args)
         {
-            Console.Write("Digite um número para calcular o seu fatorial: ");
-            int x = int.Parse(Console.ReadLine());
+            try
+            {
+                Console.Write("Digite um número para calcular o seu fatorial: ");
+                int x = int.Parse(Console.ReadLine());
 
-            int resultado = Fatorial(x);
+                int resultado = Fatorial(x);
 
-            Console.WriteLine(resultado);
+                Console.WriteLine(resultado);
+            }
+            catch (FormatException e)
+            {
+                Console.WriteLine($"Erro de formatação: {e.Message}");
+            }
+            catch (Exception e)
+            {
+                Console.WriteLine($"Erro inesperado: {e.Message}");
+            }
         }
 
         static int Fatorial(int n)
